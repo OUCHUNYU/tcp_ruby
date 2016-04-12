@@ -22,7 +22,7 @@ class Server
   def another_user(client)
     loop {                    # The connection between 2 users forever
       msg = client.gets.chomp   # read a client message
-      users.reject {|user| user == client}.first.puts "#{msg}"  # reject the user that
+      users.reject {|user| user == client}.each {|x| x.puts "#{msg}"}  # reject the user that
                                                       # is the user who sent the message. And send msg to another user.
     }
   end
