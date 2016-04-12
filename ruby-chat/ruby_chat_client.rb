@@ -30,5 +30,5 @@ class Client
   end
 end
 
-server = TCPSocket.open( "localhost", 3366 )   # Connecting to server
+server = TCPSocket.open( "172.16.50.84", 3366 )   # Connecting to server
 Client.new(server)
