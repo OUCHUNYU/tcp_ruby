@@ -24,10 +24,13 @@ class Server
       msg = client.gets.chomp   # read a client message
       users.reject {|user| user == client}.each {|x| x.puts "#{msg}"}  # reject the user that
       puts "#{msg}"
+
                                                       # is the user who sent the message. And send msg to another user.
     }
   end
 end
 
-server = Server.new("172.16.50.84", 3366)
+
+server = Server.new("localhost", 3366)
 server.run
+
